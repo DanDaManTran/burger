@@ -1,12 +1,7 @@
 const burger = require("../models/burger.js");
-// const path = require("path");
-// const app = express();
 
 //required npm to get this app to work
 const express = require("express");
-const bodyParser = require("body-parser");
-const methodOverride = require("method-override");
-const path = require("path");
 
 const app = express();
 
@@ -16,8 +11,9 @@ exports.get = app.get("/", function(req, res) {
 });
 
 exports.post = app.post("/", function(req, res) {
-  // console.log(req); //trying to find out how to navicate through req
-  burger("insert", res, "icecream");
+  burger("insert", res, req.body.burger_name);
 });
 
-//going to need a put request also so we can update the burger being devoured or not
+exports.put = app.put("/", function(req, res) {
+  burger("update", res, req.body.id);
+});

@@ -15,4 +15,5 @@ const burger = function (func, res, para){
 	}
 };
 
+
 module.exports = burger;

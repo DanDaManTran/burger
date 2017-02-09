@@ -24,5 +24,6 @@ app.set("view engine", "handlebars");
 
 app.use("/", controllers.get);
 app.use("/", controllers.post);
+app.use("/", controllers.put);
 
 app.listen(process.env.PORT || 8080);

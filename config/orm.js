@@ -18,8 +18,7 @@ const insertOne = function(res, burgerName){
       throw err;
     }
 
-		res.send(result);
-    // res.redirect("/");
+    res.redirect("/");
   });
 };
 
