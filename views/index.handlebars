@@ -1,27 +1,48 @@
-<h1>Day Planner</h1>
+<div class="container main">
+  <div class="row">
+    <div class="col-sm-6 leftCol">
+      <h3>GET IN MY BELLY</h3>
 
-  {{#each burgerList}}
-      <p>
-        {{this.burger_name}}
-				<span>
-	        <form action="/?_method=PUT" method="POST">
-	          <input type="hidden" name="id" value="{{this.id}}">
-	          <button type="submit">Devour!</button>
-	        </form>
-				</span>
-      </p>
-  {{/each}}
+      <ul style="list-style: none;">
+      {{#each burgerList}}
+        {{#if this.devoured}}
+        {{else}}
+          <li>
+            <div class="row">
+              <div class="col-sm-9">
+                <span class="left notDevour">
+                  {{this.burger_name}}
+                </span>
+              </div>
+
+              <div class="col-sm-3">
+                  <form action="/?_method=PUT" method="POST">
+                    <input type="hidden" name="id" value="{{this.id}}">
+                    <button type="submit">Devour!</button>
+                  </form>
+              </div>
+            </div>
+          <li>
+      {{/if}}
+      {{/each}}
+      </ul>
+    </div>
 
 
-<h2>Create a Plan</h2>
-<form method="POST" action="/" class="button-size">
-	<textarea type="text" name="burger_name"></textarea>
-	<button type="submit">Save Plan!</button>
-</form>
+    <div class="col-sm-6 rightCol">
+      <h3>Yummy in my tummy</h3>
 
-<!-- <h2>Update a Plan</h2>
-<form action="/?_method=PUT" method="POST" class="button-size">
-  <input type="text" name="id" placeholder="id">
-	<textarea type="text" name="burger_name" placeholder="burger_name"></textarea>
-	<button type="submit">Update Plan!</button>
-</form> -->
+      <ul style="list-style: none;">
+      {{#each burgerList}}
+        {{#if this.devoured}}
+          <li>
+            <span>
+              {{this.burger_name}}
+            </span>
+          </li>
+        {{/if}}
+      {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>

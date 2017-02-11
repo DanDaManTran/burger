@@ -3,16 +3,19 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 const path = require("path");
-const controllers = require('./controllers/burgers_controllers.js');
+// const controllers = require('./controllers/burgers_controllers.js');
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(__dirname + "/public"));
 
-// Parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+// Sets up the Express app to handle data parsing
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
@@ -22,8 +25,6 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.use("/", controllers.get);
-app.use("/", controllers.post);
-app.use("/", controllers.put);
+require("./controllers/burgers_controllers.js")(app);
 
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 5000);

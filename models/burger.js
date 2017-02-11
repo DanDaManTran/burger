@@ -1,6 +1,7 @@
 //requiring the different creating for database query
 const ORM = require("../config/orm.js");
 
+//creating a one funtion that will call which function is needed to be used then exporting it.
 const burger = function (func, res, para){
 	switch (func){
 		case "all":
@@ -14,6 +15,5 @@ const burger = function (func, res, para){
 			break;
 	}
 };
-
 
 module.exports = burger;
