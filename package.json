@@ -1,10 +1,19 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "Keeps track at the burgers you ate",
+  "description": "Burger logging app",
   "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.7",
+    "mysql": "^2.13.0"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,12 +24,5 @@
   "bugs": {
     "url": "https://github.com/DanDaManTran/burger/issues"
   },
-  "homepage": "https://github.com/DanDaManTran/burger#readme",
-  "dependencies": {
-    "body-parser": "^1.16.0",
-    "express": "^4.14.1",
-    "express-handlebars": "^3.0.0",
-    "method-override": "^2.3.7",
-    "mysql": "^2.13.0"
-  }
+  "homepage": "https://github.com/DanDaManTran/burger#readme"
 }
