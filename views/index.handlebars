@@ -3,6 +3,7 @@
     <div class="col-sm-6 leftCol">
       <h3>GET IN MY BELLY</h3>
 
+<!--  this first part will create a list with no bullets that has all the undevoured burgers along with the button that will let you devour it-->
       <ul style="list-style: none;">
       {{#each burgerList}}
         {{#if this.devoured}}
@@ -31,7 +32,8 @@
 
     <div class="col-sm-6 rightCol">
       <h3>Yummy in my tummy</h3>
-
+      
+<!--  this part will create a list with no bullets that has all the devoured burgers-->
       <ul style="list-style: none;">
       {{#each burgerList}}
         {{#if this.devoured}}

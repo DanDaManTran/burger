@@ -1,7 +1,7 @@
 //requiring the connection to the database
 const connection = require("./connection.js");
 
-// creating different fuctions for each connection querys, inputing them into an object so it can be exported
+// creating different fuctions for each connection querys, inputing them into an object so it can be exported. The first function will also render to the handlebars. Rest will redirect to the app.get which goes back to the first function
 const selectAll = function(res){
 	connection.query("SELECT * FROM burgers", function(err, data) {
 		if (err){

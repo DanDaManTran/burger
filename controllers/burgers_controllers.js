@@ -3,6 +3,7 @@ const burger = require("../models/burger.js");
 const express = require("express");
 const app = express();
 
+//creating routes so for the right function to be called
 module.exports = function(app){
   app.get("/", function(req, res) {
     burger("all", res);
