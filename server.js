@@ -6,7 +6,7 @@ const path = require("path");
 
 //creating a localhost with a port number
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(__dirname + "/public"));
@@ -30,4 +30,4 @@ app.set("view engine", "handlebars");
 require("./controllers/burgers_controllers.js")(app);
 
 //creating the localhost
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 3000);

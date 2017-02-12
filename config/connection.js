@@ -3,7 +3,7 @@ const mysql = require("mysql");
 const kee = require("../key.js");
 
 //creating the connection, connecting to the database, and exporting it
-const connection = mysql.createConnection({
+var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
 
 if (process.env.JAWSDB_URL){
   connection = process.env.JAWSDB_URL;
-}
+};
 
 connection.connect(function(err) {
   if (err) throw err;
